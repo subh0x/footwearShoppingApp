@@ -168,6 +168,14 @@ final cart = [
     'price': 90.00,
     // 'imageUrl': 'assets/images/shoes_20.png',
     'company': 'Adidas',
-    'sizes': [7, 8, 9, 10],
+    'size': 9,
+  },
+  {
+    'id': '18',
+    'title': 'Nike Blazer Mid',
+    'price': 115.00,
+    // 'imageUrl': 'assets/images/shoes_19.png',
+    'company': 'Nike',
+    'size': 8,
   },
 ];

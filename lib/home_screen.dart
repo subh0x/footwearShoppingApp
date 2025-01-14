@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:footwear_shop_app/cart_page.dart';
 import 'package:footwear_shop_app/global_variables.dart';
 import 'package:footwear_shop_app/utils.dart';
 
@@ -135,6 +136,25 @@ class _ShopHomeScreenState extends State<ShopHomeScreen> {
               ),
             ),
           ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: GestureDetector(
+                  onTap: () {
+                    // Navigator.of(context).pop();
+                  },
+                  child: Icon(Icons.home)),
+              label: "Home"),
+          BottomNavigationBarItem(
+              icon: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => CartPage()));
+                  },
+                  child: Icon(Icons.shopping_bag)),
+              label: "Cart")
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:footwear_shop_app/cart_page.dart';
 
 class ProductDetailsPage extends StatelessWidget {
   final String productTitle;
@@ -65,7 +66,7 @@ class ProductDetailsPage extends StatelessWidget {
           ),
           Spacer(),
           Container(
-            height: 240,
+            height: 200,
             decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.primary,
             ),
@@ -73,6 +74,9 @@ class ProductDetailsPage extends StatelessWidget {
               padding: const EdgeInsets.all(10.0),
               child: Column(
                 children: [
+                  SizedBox(
+                    height: 5,
+                  ),
                   Text(
                     '\$$productPrice',
                     style: TextStyle(
@@ -131,6 +135,25 @@ class ProductDetailsPage extends StatelessWidget {
               ),
             ),
           ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Icon(Icons.home)),
+              label: "Home"),
+          BottomNavigationBarItem(
+              icon: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => CartPage()));
+                  },
+                  child: Icon(Icons.shopping_bag)),
+              label: "Cart")
         ],
       ),
     );
